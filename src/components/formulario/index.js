@@ -17,12 +17,12 @@ export default function Formulario({ items, period, aoAlterado, setLoading }) {
         } else {
 
             setLoading(true)
-            axios.get(`https://music-app-backend-psi.vercel.app/api/music-info/${user}`)
-            .then(() => axios.put('https://music-app-backend-psi.vercel.app/api/music-info', { user: user, period: period, limit: limit })
+            axios.get(`https://lastatistics-api.vercel.app/api/music-info/${user}`)
+            .then(() => axios.put('https://lastatistics-api.vercel.app/api/music-info', { user: user, period: period, limit: limit })
             .then((resp) => setLoading(false))
             .then((resp) => navigate("/dados")))
             .catch(() =>
-                axios.post('https://music-app-backend-psi.vercel.app/api/music-info', { user: user, period: period, limit: limit })
+                axios.post('https://lastatistics-api.vercel.app/api/music-info', { user: user, period: period, limit: limit })
                     .then((resp) => console.log(resp))
                     .catch((error) => console.log(error)))      
             

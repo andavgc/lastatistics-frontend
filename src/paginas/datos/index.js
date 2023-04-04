@@ -14,11 +14,9 @@ export default function ApiData() {
 
   useEffect(() => {
 
-    axios.get(`https://music-app-backend-psi.vercel.app/api/music-info/${user}`)
+    axios.get(`https://lastatistics-api.vercel.app/api/music-info/${user}`)
         .then((resp) => {
-        console.log("get" + resp)
         setTracks(resp.data.tracklist);
-        // (resp.data.period === period && resp.data.length === limit)? setLoading(false): setLoading(true)
       })
       .catch((error) => console.log(error))
     
