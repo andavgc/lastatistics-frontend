@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 20%;
+    align-items: center;
+    padding: 0 10%;
 }
 
 .titulo {
@@ -14,4 +15,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 40px;
+}
+
+.logo {
+    width: 240px;
 }

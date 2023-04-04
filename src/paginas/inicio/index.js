@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
 import styles from './inicio.module.css';
-import Formulario from '../../components/formulario';
-import periods from '../../json/periods.json';
-import { UserContext } from '../../common/context/user';
+import Formulario from 'components/formulario';
+import periods from 'json/periods.json';
+import { UserContext } from 'common/context/user';
 import ClipLoader from 'react-spinners/ClipLoader';
+import logo from 'logo.png';
 
 export default function Inicio() {
 
@@ -33,11 +34,12 @@ export default function Inicio() {
       {loading ? 
       <ClipLoader
         color={"#3663d6"}
-        size={80}
+        size={40}
         aria-label="Loading Spinner"
         data-testid="loader"
       />: <></>}
       </div>
+      <img className={styles.logo} src={logo} alt='logo' />
     </main>
   )
 }
