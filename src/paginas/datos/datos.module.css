@@ -1,0 +1,15 @@
+:root {
+    background-color: #57C5B6;
+}
+
+.container {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 2%;
+}
+
+.titulo {
+    text-align: center;
+}

@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20%;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

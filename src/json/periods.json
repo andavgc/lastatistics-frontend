@@ -1,0 +1,26 @@
+[
+    {
+        "label": "last week",
+        "period": "7day"
+    },
+    {
+        "label": "last month",
+        "period": "1month"
+    },
+    {
+        "label": "last 3 months",
+        "period": "3month"
+    },
+    {
+        "label": "last 6 months",
+        "period": "6month"
+    },
+    {
+        "label": "last year",
+        "period": "12month"
+    },
+    {
+        "label": "all time",
+        "period": "overall"
+    }
+]
