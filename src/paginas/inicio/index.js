@@ -2,33 +2,43 @@ import React, { useContext, useState } from 'react';
 import styles from './inicio.module.css';
 import Formulario from 'components/formulario';
 import periods from 'json/periods.json';
+import methods from 'json/methods.json';
 import { UserContext } from 'common/context/user';
 import ClipLoader from 'react-spinners/ClipLoader';
 import logo from 'logo.png';
 
 export default function Inicio() {
 
-  // const [period, setPeriod] = useState("ola");
-  const {periodValue, setPeriodValue, setPeriod, period} = useContext(UserContext)
+  const {period, method, setPeriodValue, setPeriod, setMethod, setMethodValue} = useContext(UserContext)
   const [loading, setLoading] = useState(false)
 
   function takePeriod(periods, valor){
     
-    const newValue = periods.filter(period => period.label===valor)[0]
+    const newValue = periods.filter(obj => obj.label===valor)[0]
     
     setPeriodValue(newValue.label)
     setPeriod(newValue.period)
+  }
+
+  function takeMethod(methodsArray, valor){
+    
+    const newValue = methodsArray.filter(obj => obj.label===valor)[0]
+    
+    setMethodValue(newValue.label)
+    setMethod(newValue.method)
   }
 
   return (
     <main className={styles.container}>
       <h1 className={styles.titulo}>Enter the informations</h1>
       <Formulario 
-      items={periods}
+      periods={periods}
+      methods={methods}
       period={period}
-      value={periodValue}
+      method={method}
       setLoading={setLoading}
-      aoAlterado={(valor) => takePeriod(periods, valor)}
+      aoPeriodoAlterado={(valor) => takePeriod(periods, valor)}
+      aoMetodoAlterado={(valor) => takeMethod(methods[0].user, valor)}
       />
       <div className={styles.loading}>
       {loading ? 
