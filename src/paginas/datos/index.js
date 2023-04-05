@@ -6,7 +6,7 @@ import Card from '../../components/card';
 
 export default function ApiData() {
 
-  const { user, period, limit, periodValue, method } = useContext(UserContext);
+  const { user, period, limit, periodValue, methodValue } = useContext(UserContext);
   const [tracks, setTracks] = useState([]);
 
 
@@ -24,7 +24,7 @@ export default function ApiData() {
 
   return (
     <>
-      <h1 className={styles.titulo}>{user}'s top {limit} {method} {periodValue}</h1>
+      <h1 className={styles.titulo}>{user}'s {limit} {methodValue} {periodValue}</h1>
       <div className={styles.container}>
       {tracks?.map(track => <Card key={track.name} data={track}/>)}
       </div>
