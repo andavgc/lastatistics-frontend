@@ -3,13 +3,11 @@ import styles from './datos.module.css';
 import axios from 'axios';
 import { UserContext } from '../../common/context/user';
 import Card from '../../components/card';
-import ClipLoader from "react-spinners/ClipLoader"
 
 export default function ApiData() {
 
   const { user, period, limit, periodValue } = useContext(UserContext);
   const [tracks, setTracks] = useState([]);
-  // const [loading, setLoading] = useState(false);
 
 
   useEffect(() => {
