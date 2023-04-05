@@ -24,7 +24,7 @@ export default function ApiData() {
 
   return (
     <>
-      <h1 className={styles.titulo}>{user}'s top {limit} {method.substr(3, -1)} {periodValue}</h1>
+      <h1 className={styles.titulo}>{user}'s top {limit} {method.substr(3, method.length)} {periodValue}</h1>
       <div className={styles.container}>
       {tracks?.map(track => <Card key={track.name} data={track}/>)}
       </div>
