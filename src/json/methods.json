@@ -15,6 +15,10 @@
         {
             "label": "top tags",
             "method": "gettoptags"
+        },
+        {
+            "label": "top artists",
+            "method": "gettopartists"
         }
     ]},
     {
