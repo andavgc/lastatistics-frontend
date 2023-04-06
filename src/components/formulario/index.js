@@ -24,10 +24,13 @@ export default function Formulario({ periods, period, methods, aoPeriodoAlterado
                     console.log(resp))
                     .then((resp) => setLoading(false))
                     .then((resp) => navigate("/dados")))
-                .catch(() =>
+                .catch((e) =>
                     axios.post('https://lastatistics-api.vercel.app/api/music-info', { user: user, period: period, limit: limit, method: `${Object.keys(methods[0])}.${method}` })
-                        .then((resp) => console.log(resp))
-                        .catch((error) => console.log(error)))
+                    .then((resp) => 
+                    console.log(resp))
+                    .then((resp) => setLoading(false))
+                    .then((resp) => navigate("/dados"))
+                    .catch((error) => console.log(error)))
 
         }
 

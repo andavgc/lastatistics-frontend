@@ -6,7 +6,7 @@ import Card from '../../components/card';
 
 export default function ApiData() {
 
-  const { user, period, limit, periodValue, methodValue } = useContext(UserContext);
+  const { user, period, limit, periodValue, method } = useContext(UserContext);
   const [tracks, setTracks] = useState([]);
 
 
@@ -14,7 +14,7 @@ export default function ApiData() {
 
     axios.get(`https://lastatistics-api.vercel.app/api/music-info/${user}`)
         .then((resp) => {
-        setTracks(resp.data.tracklist);
+        setTracks(resp.data.infolist);
       })
       .catch((error) => console.log(error))
     
