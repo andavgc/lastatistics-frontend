@@ -11,7 +11,6 @@ export default function Formulario({ periods, period, methods, aoPeriodoAlterado
     const navigate = useNavigate();
     const { user, setUser, limit, method, setLimit, periodValue, methodValue } = useContext(UserContext);
     const url = 'https://lastatistics-api.vercel.app/api/music-info/'
-
     const addUserHandler = (user, period, limit, method) => {
         if (!user || !period || !limit || !method) {
             return alert("You need to fill all fields")
@@ -25,7 +24,7 @@ export default function Formulario({ periods, period, methods, aoPeriodoAlterado
                     .then((resp) => setLoading(false))
                     .then((resp) => navigate("/dados")))
                 .catch((e) =>
-                    axios.post('https://lastatistics-api.vercel.app/api/music-info', { user: user, period: period, limit: limit, method: `${Object.keys(methods[0])}.${method}` })
+                    axios.post(url, { user: user, period: period, limit: limit, method: `${Object.keys(methods[0])}.${method}` })
                     .then((resp) => 
                     console.log(resp))
                     .then((resp) => setLoading(false))

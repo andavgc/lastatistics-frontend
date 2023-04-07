@@ -5,16 +5,8 @@
             "method": "gettoptracks"
         },
         {
-            "label": "recent tracks",
-            "method": "getrecenttracks"
-        },
-        {
             "label": "top albums",
             "method": "gettopalbums"
-        },
-        {
-            "label": "top tags",
-            "method": "gettoptags"
         },
         {
             "label": "top artists",
