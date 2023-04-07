@@ -13,3 +13,9 @@
 .titulo {
     text-align: center;
 }
+
+@media (max-width: 450px) {
+    .titulo {
+        font-size: 180%;
+    }
+}

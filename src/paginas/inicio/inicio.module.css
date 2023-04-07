@@ -21,3 +21,10 @@
 .logo {
     width: 240px;
 }
+
+@media (max-width: 500px) {
+    
+    .titulo {
+        text-align: center;
+    }
+}
