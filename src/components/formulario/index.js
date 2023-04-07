@@ -14,6 +14,8 @@ export default function Formulario({ periods, period, methods, aoPeriodoAlterado
     const addUserHandler = (user, period, limit, method) => {
         if (!user || !period || !limit || !method) {
             return alert("You need to fill all fields")
+        } else if (Number(limit) > 50) {
+            return alert("Max quantity is 50")
         } else {
 
             setLoading(true)
@@ -57,7 +59,7 @@ export default function Formulario({ periods, period, methods, aoPeriodoAlterado
                     </select>
                 </div>
                 <div className={styles.limit}>
-                    <label className={styles.label}>Limit:&emsp;</label>
+                    <label className={styles.label}>Quantity:&emsp;</label>
                     <input required={true} type="text" id='limit' className={styles.texto__limit} value={limit} onChange={(e) => setLimit(e.target.value)}></input>
                 </div>
             </div>
