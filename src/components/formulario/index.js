@@ -37,27 +37,28 @@ export default function Formulario({ periods, period, methods, aoPeriodoAlterado
 
     return (
         <div className={styles.form}>
-            <div>
-                <select required={true} className={styles.select} value={methodValue} onChange={event => aoMetodoAlterado(event.target.value)}>
+            <div className={styles.method__selector}>
+                <label className={styles.label}>Info:&emsp;</label>
+                <select required={true} className={styles.select__method} value={methodValue} onChange={event => aoMetodoAlterado(event.target.value)}>
                     <option />
                     {methods[0].user.map((method) => <option className={styles.option} key={method.label}>{method.label}</option>)}
                 </select>
             </div>
             <div className={styles.user}>
-                <label className={styles.label}>User</label>
-                <input required={true} type="user" id='user' className={styles.texto} value={user} onChange={(e) => setUser(e.target.value)}></input>
+                <label className={styles.label}>User:&emsp;</label>
+                <input required={true} type="user" id='user' className={styles.texto__user} value={user} onChange={(e) => setUser(e.target.value)}></input>
             </div>
             <div className={styles.params}>
                 <div className={styles.period}>
-                    <label className={styles.label}>Period</label>
-                    <select required={true} className={styles.select} value={periodValue} onChange={event => aoPeriodoAlterado(event.target.value)}>
+                    <label className={styles.label}>Period:&emsp;</label>
+                    <select required={true} className={styles.select__period} value={periodValue} onChange={event => aoPeriodoAlterado(event.target.value)}>
                         <option />
                         {periods.map((period) => <option className={styles.option} key={period.label}>{period.label}</option>)}
                     </select>
                 </div>
                 <div className={styles.limit}>
-                    <label className={styles.label}>Limit</label>
-                    <input required={true} type="text" id='limit' className={styles.texto} value={limit} onChange={(e) => setLimit(e.target.value)}></input>
+                    <label className={styles.label}>Limit:&emsp;</label>
+                    <input required={true} type="text" id='limit' className={styles.texto__limit} value={limit} onChange={(e) => setLimit(e.target.value)}></input>
                 </div>
             </div>
             <button onClick={() => addUserHandler(user, period, limit, method)}>show</button>

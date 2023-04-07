@@ -42,7 +42,7 @@
 
 }
 
-.texto_user {
+.texto__user {
     font-size: 15px;
     border-radius: 5px; 
     border: 1px solid grey;
@@ -51,7 +51,7 @@
     text-align-last:center;
 }
 
-.texto_limit {
+.texto__limit {
     font-size: 15px;
     border-radius: 5px; 
     border: 1px solid grey;
