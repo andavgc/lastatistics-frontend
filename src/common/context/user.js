@@ -11,8 +11,24 @@ export const UserProvider = ({children}) => {
     const [limit, setLimit] = useState("")
     const [method, setMethod] = useState("gettoptracks")
     const [methodValue, setMethodValue] = useState("top tracks")
+    const [noData, setNoData] = useState(false)
     return (
-        <UserContext.Provider value={{user, setUser, periodValue, setPeriodValue, limit, setLimit, period, setPeriod, method, setMethod, methodValue, setMethodValue}}>
+        <UserContext.Provider 
+        value={{
+            user, 
+            setUser, 
+            periodValue, 
+            setPeriodValue, 
+            limit, 
+            setLimit, 
+            period, 
+            setPeriod, 
+            method, 
+            setMethod, 
+            methodValue, 
+            setMethodValue, 
+            noData, 
+            setNoData}}>
             {children}
         </UserContext.Provider>
     )

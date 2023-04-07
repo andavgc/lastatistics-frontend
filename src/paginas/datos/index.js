@@ -6,7 +6,7 @@ import Card from '../../components/card';
 
 export default function ApiData() {
 
-  const { user, period, limit, periodValue, methodValue } = useContext(UserContext);
+  const { user, period, limit, periodValue, methodValue, noData, setNoData } = useContext(UserContext);
   const [tracks, setTracks] = useState([]);
 
 
@@ -14,12 +14,15 @@ export default function ApiData() {
 
     axios.get(`https://lastatistics-api.vercel.app/api/music-info/${user}`)
       .then((resp) => {
-        setTracks(resp.data.infolist);
+        setTracks(resp.data.infolist)
       })
-      .catch((error) => console.log(error))
+      .catch((error) => {
+        console.log(error)
+        setNoData(true)
+      })
+      
 
-
-  }, [user, period, limit])
+  }, [user, period, limit, setNoData])
 
 
   return (
@@ -29,7 +32,7 @@ export default function ApiData() {
       </>
         
         <div className={styles.container}>
-          {tracks!==undefined && tracks.length!==0? <> {tracks.map(track => <Card key={track.name} data={track} />)}</>:<h2 className={styles.error__message}>Oops... looks like there's no data to show here :(</h2>}
+          {noData? <h2 className={styles.error__message}>Oops... looks like there's no data to show here :(</h2>:<>{tracks.map(track => <Card key={track.name} data={track} />)}</>}
         </div>
       </>
   )

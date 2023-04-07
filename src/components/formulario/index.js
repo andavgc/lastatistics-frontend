@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Formulario({ periods, period, methods, aoPeriodoAlterado, aoMetodoAlterado, setLoading }) {
 
     const navigate = useNavigate();
-    const { user, setUser, limit, method, setLimit, periodValue, methodValue } = useContext(UserContext);
+    const { user, setUser, limit, method, setLimit, periodValue, methodValue, setNoData } = useContext(UserContext);
     const url = 'https://lastatistics-api.vercel.app/api/music-info/'
     const addUserHandler = (user, period, limit, method) => {
         if (!user || !period || !limit || !method) {
@@ -21,14 +21,13 @@ export default function Formulario({ periods, period, methods, aoPeriodoAlterado
             setLoading(true)
             axios.get(url + user)
                 .then(() => axios.put(url, { user: user, period: period, limit: limit, method: `${Object.keys(methods[0])}.${method}` })
-                    .then((resp) => 
-                    console.log(resp))
+                    .then((resp) => console.log(resp))
+                    .then((resp) => resp.data.infolist.length===0?setNoData(true):setNoData(false))
                     .then((resp) => setLoading(false))
                     .then((resp) => navigate("/dados")))
                 .catch((e) =>
                     axios.post(url, { user: user, period: period, limit: limit, method: `${Object.keys(methods[0])}.${method}` })
-                    .then((resp) => 
-                    console.log(resp))
+                    .then((resp) => resp.data.infolist.length===0?setNoData(true):setNoData(false))
                     .then((resp) => setLoading(false))
                     .then((resp) => navigate("/dados"))
                     .catch((error) => console.log(error)))
