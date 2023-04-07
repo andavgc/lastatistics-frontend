@@ -14,6 +14,15 @@
     text-align: center;
 }
 
+.error__message {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #18508f;
+}
+
 @media (max-width: 450px) {
     .titulo {
         font-size: 180%;
