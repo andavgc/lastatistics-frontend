@@ -59,6 +59,7 @@
     box-sizing: content-box;
     text-align-last:center;
     width: 80%;
+    min-width: 120px;
 }
 
 .period {
